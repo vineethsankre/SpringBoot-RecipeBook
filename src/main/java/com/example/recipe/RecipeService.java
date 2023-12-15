@@ -1,6 +1,10 @@
 package com.example.recipe;
 
 import com.example.recipe.RecipeRepository;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
+
 import com.example.recipe.Recipe;
 
 import java.util.*;
@@ -10,6 +14,7 @@ import java.util.*;
 public class RecipeService implements RecipeRepository {
 
         private static HashMap<Integer, Recipe> recipeBook = new HashMap<>();
+        int uniqueId = 6;
 
         public RecipeService() {
                 recipeBook.put(1,
@@ -30,6 +35,24 @@ public class RecipeService implements RecipeRepository {
                 Collection<Recipe> recipe = recipeBook.values();
                 ArrayList<Recipe> recipes = new ArrayList<>(recipe);
                 return recipes;
+
+        }
+
+        @Override
+        public Recipe getRecipeById(int recipeId) {
+                Recipe recipe = recipeBook.get(recipeId);
+                if (recipe == null) {
+                        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+                }
+                return recipe;
+        }
+
+        @Override
+        public Recipe addRecipe(Recipe recipe) {
+                recipe.setRecipeId(uniqueId);
+                recipeBook.put(uniqueId, recipe);
+                uniqueId += 1;
+                return recipe;
 
         }
 }

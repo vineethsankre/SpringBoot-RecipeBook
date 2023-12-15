@@ -6,4 +6,8 @@ import java.util.*;
 public interface RecipeRepository {
     ArrayList<Recipe> getAllRecipes();
 
+    Recipe getRecipeById(int recipeId);
+
+    Recipe addRecipe(Recipe recipe);
+
 }

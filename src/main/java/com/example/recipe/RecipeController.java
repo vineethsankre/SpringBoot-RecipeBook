@@ -9,8 +9,19 @@ public class RecipeController {
     RecipeService recipeService = new RecipeService();
 
     @GetMapping("/recipes")
-    public ArrayList<Recipe> getAllRecipes(){
+    public ArrayList<Recipe> getAllRecipes() {
         return recipeService.getAllRecipes();
+    }
+
+    @GetMapping("/recipes/{recipeId}")
+    public Recipe getRecipeById(@PathVariable("recipeId") int recipeId) {
+        return recipeService.getRecipeById(recipeId);
+    }
+
+    @PostMapping("/recipes")
+    public Recipe addRecipe(@RequestBody Recipe recipe) {
+        return recipeService.addRecipe(recipe);
+
     }
 
 }

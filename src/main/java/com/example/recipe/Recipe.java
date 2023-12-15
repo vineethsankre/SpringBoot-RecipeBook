@@ -1,46 +1,51 @@
 package com.example.recipe;
+
 import java.util.*;
 
-public class Recipe{
+public class Recipe {
     private int recipeId;
     private String recipeName;
     private String recipeType;
     private List<String> ingredients;
 
-    public Recipe(int recipeId, String recipeName, String recipeType, List<String> ingredients){
+    public Recipe(int recipeId, String recipeName, String recipeType, List<String> ingredients) {
         this.recipeId = recipeId;
         this.recipeName = recipeName;
         this.recipeType = recipeType;
         this.ingredients = ingredients;
     }
 
-    public int getRecipeId(){
+    public int getRecipeId() {
         return recipeId;
     }
-    public void setRecipeId(int recipeId){
+
+    public void setRecipeId(int recipeId) {
         this.recipeId = recipeId;
     }
 
-    public String getRecipeName(){
+    public String getRecipeName() {
         return recipeName;
     }
-    public void setRecipeName(String recipeName){
+
+    public void setRecipeName(String recipeName) {
         this.recipeName = recipeName;
     }
-    public String getRecipeType(){
+
+    public String getRecipeType() {
         return recipeType;
     }
-    public void setRecipeType(String recipeType){
+
+    public void setRecipeType(String recipeType) {
         this.recipeType = recipeType;
     }
 
-    public List<String> getIngredienList(){
+    public List<String> getIngredienList() {
         return ingredients;
     }
-    public void setIngredients(List<String> ingredients){
+
+    public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
 
     }
-
 
 }
