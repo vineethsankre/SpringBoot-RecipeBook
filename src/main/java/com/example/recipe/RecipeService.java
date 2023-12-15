@@ -75,4 +75,15 @@ public class RecipeService implements RecipeRepository {
                 return existingRecipe;
 
         }
+
+        @Override
+        public void deleteRecipe(int recipeId) {
+                Recipe recipe = recipeBook.get(recipeId);
+                if (recipe == null) {
+                        throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+                } else {
+                        recipeBook.remove(recipeId);
+                        throw new ResponseStatusException(HttpStatus.NO_CONTENT);
+                }
+        }
 }

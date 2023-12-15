@@ -29,4 +29,9 @@ public class RecipeController {
         return recipeService.updateRecipe(recipeId, recipe);
     }
 
+    @DeleteMapping("/recipes/{recipeId}")
+    public void deleteRecipe(@PathVariable int recipeId){
+        recipeService.delteRecipe(recipeId);
+    }
+
 }

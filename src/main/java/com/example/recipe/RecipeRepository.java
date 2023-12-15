@@ -12,6 +12,6 @@ public interface RecipeRepository {
 
     Recipe updateRecipe(int recipeId, Recipe recipe);
 
-    void delteRecipe(int recipeId);
+    void deleteRecipe(int recipeId);
 
 }
