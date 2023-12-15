@@ -24,4 +24,9 @@ public class RecipeController {
 
     }
 
+    @PutMapping("/recipes/{recipeId}")
+    public Recipe updateRecipe(@PathVariable("recipeId") int recipeId, @RequestBody Recipe recipe){
+        return recipeService.updateRecipe(recipeId, recipe);
+    }
+
 }

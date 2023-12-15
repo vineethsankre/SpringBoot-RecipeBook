@@ -10,4 +10,8 @@ public interface RecipeRepository {
 
     Recipe addRecipe(Recipe recipe);
 
+    Recipe updateRecipe(int recipeId, Recipe recipe);
+
+    void delteRecipe(int recipeId);
+
 }

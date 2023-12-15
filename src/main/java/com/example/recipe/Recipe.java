@@ -39,7 +39,7 @@ public class Recipe {
         this.recipeType = recipeType;
     }
 
-    public List<String> getIngredienList() {
+    public List<String> getIngredientsList() {
         return ingredients;
     }
 
